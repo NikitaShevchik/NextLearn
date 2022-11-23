@@ -1,18 +1,20 @@
-import { useRouter } from "next/router"
+import MainContainer from "../../components/MainContainer/MainContainer"
 
 export default function ({ user }) {
     return (
-        <div>
-            Name: {user.name}
-            <br />
-            Email: {user.email}
-            <br />
-            Phone: {user.phone}
-            <br />
-            Username: {user.username}
-            <br />
-            Website: {user.website}
-        </div>
+        <MainContainer keywords={`${user.username}, ${user.name}`}>
+            <div>
+                Name: {user.name}
+                <br />
+                Email: {user.email}
+                <br />
+                Phone: {user.phone}
+                <br />
+                Username: {user.username}
+                <br />
+                Website: {user.website}
+            </div>
+        </MainContainer>
     )
 }
 

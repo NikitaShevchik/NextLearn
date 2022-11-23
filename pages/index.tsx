@@ -1,34 +1,12 @@
-import React, { useState } from "react"
-import LinkHref from "../components/LinkHref/LinkHref"
+import React from "react"
+import MainContainer from "../components/MainContainer/MainContainer"
 
-const index = ({ data }) => {
-    const [users, setUsers] = useState(data)
+const index = () => {
     return (
-        <div>
-            <div className='navbar'>
-                <LinkHref text={'Main page'} href={'/'} />
-                <LinkHref text={'Users page'} href={'/users'} />
-            </div>
+        <MainContainer keywords={"main page, welcome page"}>
             <h1> Main Page</h1>
-            <ul>
-                {users.map(user => {
-                    return (
-                        <li key={user.id}>
-                            <LinkHref text={user.name} href={`/users/${user.id}`} />
-                        </li>
-                    )
-                })}
-            </ul>
-        </div>
+        </MainContainer>
     )
 }
 
 export default index;
-
-export async function getStaticProps() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users')
-    const data = await response.json()
-    return {
-        props: { data },
-    }
-}

@@ -1,4 +1,8 @@
 .link {
     margin: 0 10px;
     color: green;
+    text-decoration: none;
+    &:hover {
+        color: #000;
+    }
 }
